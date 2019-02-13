@@ -1,7 +1,7 @@
 {
   "name": "atom-elementary-dark-ui",
   "theme": "ui",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "A elementary os UI dark theme, that uses the official CSS!",
   "keywords": [
     "ui",
