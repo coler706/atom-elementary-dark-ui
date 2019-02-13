@@ -1,0 +1,70 @@
+/* Copyright 2011-2018 elementary, Inc. (https://elementary.io)
+*
+* This file is part of the elementary GTK theme.
+*
+* The elementary GTK theme is free software: you can redistribute it
+* and/or modify it under the terms of the GNU General Public License as
+* published by the Free Software Foundation, either version 3 of the
+* License, or (at your option) any later version.
+*
+* The elementary GTK theme is distributed in the hope that it will be
+* useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+* Public License for more details.
+*
+* You should have received a copy of the GNU General Public License along
+* with the elementary GTK theme. If not, see http://www.gnu.org/licenses/.
+*/
+
+@import url("palette.less");
+@import url("brand.less");
+.mutlw(@x, @y) {
+    @result: ((@x + @y) / 2);
+  }
+
+/* Default color scheme */
+@base_color: white;
+@bg_color: multiply(@base_color,tint(#000,096%));
+@bg_highlight_color: white;
+@border_color: fade(@BLACK_900, 25%);
+@fg_color: @BLACK_500;
+@insensitive_color: mix(@text_color, @bg_color, 0.5);
+@inset_dark_color: fade(@BLACK_900, 6%);
+@inset_dark_color_backdrop: alpha(@BLACK_900, 0.03);
+@menu_separator:fade(@BLACK_900, 15%);
+@menu_separator_shadow: fade(white, 80%);
+@placeholder_text_color: multiply(@text_color,tint(#000,250%));
+@selected_bg_color: multiply(@BLUEBERRY_300,tint(#000,085%));
+@selected_fg_color: white;
+@text_color: @BLACK_500;
+@text_shadow_color: fade(white, 40%);
+@titlebar_color: mix(@SILVER_300, @SILVER_100, 0.25);
+@title_color: multiply(@titlebar_color,tint(#000,055%));
+@title_shadow_color: fade(white, 60%);
+@tooltip_bg_color: @BLACK_900;
+@tooltip_fg_color: white;
+@decoration_border_color: fade(#000, 30%);
+@internal_element_color: mix(@text_color, @base_color, 0.4);
+@internal_element_prelight: mix(@text_color, @base_color, 0.2);
+@ideal_bg_color:multiply(
+                @titlebar_color,
+                tint(#000,90%)
+            );
+/* Colormap actually used by the theme, to be overridden in other css files */
+@theme_bg_color: @bg_color;
+@attention_color: @BLUEBERRY_500;
+@link_color: @BLUEBERRY_500;
+@warning_color: @BANANA_500;
+@error_color: @STRAWBERRY_500;
+@success_color: @LIME_500;
+@insensitive_fg_color: @SILVER_500;
+
+/* GTK NAMED COLORS */
+@borders: @border_color;
+@theme_fg_color: @fg_color;
+@theme_text_color: @text_color;
+@theme_bg_color: @bg_color;
+@theme_base_color: @base_color;
+@theme_selected_bg_color: @selected_bg_color;
+@theme_selected_fg_color: @selected_fg_color;
+@insensitive_fg_color: @insensitive_color;

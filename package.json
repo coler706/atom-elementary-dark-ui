@@ -1,13 +1,16 @@
 {
-  "name": "ui-theme-template",
+  "name": "atom-elementary-dark-ui",
   "theme": "ui",
-  "version": "0.0.0",
-  "description": "A short description of your UI theme",
+  "version": "0.1.0",
+  "description": "A elementary os UI dark theme, that uses the official CSS!",
   "keywords": [
     "ui",
-    "theme"
+    "theme",
+    "offical",
+    "elementary",
+    "dark"
   ],
-  "repository": "https://github.com/atom-community/ui-theme-template",
+  "repository": "https://github.com/coler706/atom-elementary-dark-ui",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

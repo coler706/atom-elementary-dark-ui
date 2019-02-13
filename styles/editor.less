@@ -22,3 +22,60 @@ atom-text-editor[mini] {
     background-color: @background-color-selected;
   }
 }
+atom-text-editor[mini] {
+    background-image:
+        linear-gradient(
+            to bottom,
+            multiply(
+                @base_color,
+                tint(black,93%)
+            ),
+            multiply(
+                @base_color,
+                tint(black,97%)
+            )
+        );
+    border: 0px solid @border_color;
+    border-radius: 2.5px;
+    box-shadow:
+        inset 0 0 0 0 fade(@inset_dark_color,070%),
+        inset 0 0 0 1px fade(@inset_dark_color,030%),
+        0 1px 0 0 fade(@bg_highlight_color,030%);
+    color: @text_color;
+    text-shadow: 0 1px @text_shadow_color;
+    padding: 3px;
+    padding-left: @component-padding/2;
+    transition: all 200ms ease-out;
+    -gtk-icon-shadow: 0 1px @text_shadow_color;
+    opacity: 100%;
+    max-height: none;
+}
+atom-text-editor[mini] .placeholder-text{
+  color: @placeholder_text_color;
+}
+// atom-text-editor[mini]{
+//     border-width: 0 0 1px;
+//     border-style: solid;
+//     padding: 2px;
+//     background-image:
+//         linear-gradient(
+//             to bottom,
+//             multiply(
+//                 @titlebar_color,
+//                 tint(black,96%)
+//             ),
+//             multiply(
+//                 @titlebar_color,
+//                 tint(black,90%)
+//             )
+//         );
+//     box-shadow:
+//         inset 0 1px 0 0 fade(@bg_highlight_color,030%),
+//         inset 0 -1px 0 0 fade(@bg_highlight_color,020%);
+//     border-color: multiply(@titlebar_color,tint(#000,060%));
+//     text-shadow: 0 1px fade(@bg_highlight_color,040%);
+//     -gtk-icon-shadow: 0 1px fade(@bg_highlight_color,040%);
+// }
+atom-text-editor.editor.mini > div{
+  background-color: transparent !important;
+}

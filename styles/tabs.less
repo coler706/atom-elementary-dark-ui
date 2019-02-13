@@ -1,13 +1,21 @@
-
 // Tabs
 // -------------------
-
 // Displays selectable tabs above the editor.
 // Overrides: atom/tabs
 
 .tab-bar {
-  background-color: @tab-bar-background-color;
-  border-bottom: 1px solid @base-border-color;
+  // background-color: @tab-bar-background-color;
+  // border-bottom: 1px solid @base-border-color;
+  background-color: @bg_color;
+  background-image: linear-gradient(to bottom, fade(#000, 10%), fade(#000, 0%) 3px), linear-gradient(to bottom, multiply(@titlebar_color, tint(#000,91%)), multiply(@titlebar_color, tint(#000,96%)));
+  border-style: solid;
+  border-width: 1px;
+  border-color: multiply(@titlebar_color,tint(#000,076%)); // multiply(@titlebar_color,tint(#000,062%));
+  border-radius: 0;
+  border-bottom-width:1px overflow: visible;
+  height: auto;
+  border-left-width: 0;
+  border-right-width: 0;
 
   .tab {
     color: @text-color;
@@ -15,13 +23,45 @@
     line-height: @tab-height;
     font-size: @font-size;
     border-right: 1px solid @tab-border-color;
+    border-left: 1px solid @tab-border-color;
     background-color: @tab-background-color;
+    font-size: 16px;
+    margin-top: 0;
+    background-image: none;
+    // background-color: transparent;
+    border-image: linear-gradient(to bottom, transparent, fade(#000, 20%)) 0 1 0 0;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 0 1px;
+    color: multiply(@text-color,tint(#000,112%));
+    margin-right: -1px;
+    padding: 3px !important;
+    height: 33px !important;
+    line-height: 170% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    max-width: 200px;
+    // border-bottom: 0px solid multiply(@titlebar_color,tint(#000,076%));
+    box-shadow: none;
+
+    &:first-child {
+      border-width: 0 1px;
+      border-image: linear-gradient(to bottom, transparent, fade(#000, 20%)) 0 1 0 1;
+    }
+
     &.active {
       color: @text-color-selected;
       background-color: @tab-background-color-active;
+      background-image: linear-gradient(to bottom, multiply(@titlebar_color, tint(#000,94%)), multiply(@titlebar_color, tint(#000,90%)));
+      border-color: multiply(@titlebar_color,tint(#000,062%));
+      border-image: none;
+      border-radius: 4px 4px 0 0 !important;
+      // overflow: hidden;
+      border-style: solid;
+      box-shadow: 0 1px 0 @ideal_bg_color, inset 0 -1px 0 0 multiply(@titlebar_color, tint(#000,90%)),inset 0 0 0 1px fade(@bg_highlight_color,020%), 0 0 1px 1px fade(#000,010%), inset 0 -4px 0 @colorAccent !important;
+      text-shadow: 0 1px @text_shadow_color;
+      color: @text_color;
     }
-
-
     // Modified Icon (the circle) -------------------
     &.modified:not(:hover) .close-icon {
       top: 50%;
@@ -29,29 +69,132 @@
       margin-top: -3px;
       border-color: @text-color-info;
     }
+
     &.modified:hover .close-icon {
       color: currentColor;
     }
-
-
     // Close Icon (the X) -------------------
     .close-icon:hover {
       color: @text-color-selected;
     }
+
     &.active .close-icon:hover {
       color: @text-color;
     }
-
-
     // Dragging -------------------
     // Styles get applied while dragging a tab
     &.is-dragging {
       background: darken(@tab-background-color, 10%);
       border-color: transparent;
-      opacity: .5;
+      opacity: 0.5;
+
       & .close-icon {
         visibility: hidden;
       }
     }
   }
+}
+
+atom-dock .tab-bar .tab.active:first-child:last-child,
+atom-dock .tab-bar .tab:first-child:last-child {
+  border-width: 0 0;
+  width: 100%;
+  max-width: none;
+  border-image: linear-gradient(to bottom, transparent, fade(#000, 20%)) 0 1 0 1;
+  margin-left: -1px;
+  margin-right: -1px;
+  border-radius: 0 !important;
+  box-shadow: inset 0 -1px 0 @ideal_bg_color,0 1px 0 @ideal_bg_color, inset 0 0 0 1px fade(@bg_highlight_color,020%), 0 0 1px 1px fade(#000,010%) !important;
+}
+
+.tab-bar .tab .title {
+  color: fade(@text_color,075%);
+  padding: 0 6px !important;
+  text-align: center;
+}
+
+.tab-bar .tab:active .title {
+  color: @text_color;
+  // padding: 3px 6px;
+}
+/*headers*/
+
+.github-StagingView-header {
+  padding: 0;
+}
+
+.github-StagingView-header > button,
+.github-StagingView-header > span {
+  text-shadow: 0 1px @text_shadow_color;
+  background-image: linear-gradient(to bottom, transparent, transparent 50%, fade(#000, 4%));
+  border: 1px solid @border_color;
+  // border-radius: 2.5px;
+  box-shadow: inset 0 0 0 1px fade(@bg_highlight_color,005%), inset 0 1px 0 0 fade(@bg_highlight_color,045%), inset 0 -1px 0 0 fade(@bg_highlight_color,015%), 0 1px 0 0 fade(@bg_highlight_color,015%);
+  color: @text_color;
+  transition: all 100ms ease-in;
+  // -gtk-icon-shadow: 0 1px @text_shadow_color;
+  border-left-width: 0;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-radius: 0;
+  background-color: @bg_color;
+  background-image: linear-gradient(to bottom, multiply(@base_color, tint(#000,88%)), @base_color);
+  font-weight: bold;
+  margin: 0;
+  height: 2.5em;
+  padding-left: 10px;
+}
+table.native-key-bindings th{
+  text-shadow: 0 1px @text_shadow_color;
+  background-image: linear-gradient(to bottom, transparent, transparent 50%, fade(#000, 4%));
+  border: 1px solid @border_color;
+  // border-radius: 2.5px;
+  box-shadow: inset 0 0 0 1px fade(@bg_highlight_color,005%), inset 0 1px 0 0 fade(@bg_highlight_color,045%), inset 0 -1px 0 0 fade(@bg_highlight_color,015%), 0 1px 0 0 fade(@bg_highlight_color,015%);
+  color: @text_color;
+  transition: all 100ms ease-in;
+  // -gtk-icon-shadow: 0 1px @text_shadow_color;
+  // border-left-width: 0;
+  // border-top-width: 0;
+  // border-bottom-width: 0;
+  border-radius: 0;
+  background-color: @bg_color;
+  background-image: linear-gradient(to bottom, multiply(@base_color, tint(#000,88%)), @base_color);
+  font-weight: bold;
+  margin: 0;
+  height: 2.5em;
+  padding-left: 10px;
+  border-collapse: collapse;
+  border-bottom-width: 1px !important;
+}
+table.native-key-bindings thead{
+  // border-left: 1px solid @border_color;
+}
+
+.github-StagingView-header > span.icon {
+  padding: 4px 6px;
+}
+
+.github-StagingView-header button:last-child,
+column-header:last-child .btn {
+  border-right-width: 0;
+}
+.preview-header{
+  text-shadow: 0 1px @text_shadow_color;
+
+  border: 1px solid @border_color;
+  // border-radius: 2.5px;
+  box-shadow: inset 0 0 0 1px fade(@bg_highlight_color,005%), inset 0 1px 0 0 fade(@bg_highlight_color,045%), inset 0 -1px 0 0 fade(@bg_highlight_color,015%), 0 1px 0 0 fade(@bg_highlight_color,015%);
+  color: @text_color;
+  transition: all 100ms ease-in;
+  // -gtk-icon-shadow: 0 1px @text_shadow_color;
+  border-left-width: 0;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-radius: 0;
+  background-color: @bg_color;
+  background-image: linear-gradient(to bottom, multiply(@base_color, tint(#000,88%)), @base_color);
+  font-weight: bold;
+  margin: 0;
+  // height: 2.5em;
+  padding-left: 10px;
 }

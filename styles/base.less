@@ -20,3 +20,70 @@ atom-pane {
     border-right: none;
   }
 }
+::-webkit-scrollbar:hover {
+    transition: all 200ms ease-in-out;
+}
+
+::-webkit-scrollbar button {
+    border: none;
+    background-image: none;
+    background-color: transparent;
+}
+
+.horizontal-scrollbar ::-webkit-scrollbar-thumb {//.horizontal
+    min-width: 30px;
+    min-height: 8px;
+}
+
+.horizontal-scrollbar ::-webkit-scrollbar-thumb:hover {
+    min-height: 8px;
+}
+
+.vertical-scrollbar ::-webkit-scrollbar-thumb {
+    min-height: 30px;
+    min-width: 8px;
+
+}
+.scrollbars-visible-always ::-webkit-scrollbar-thumb{
+
+}
+.vertical-scrollbar::-webkit-scrollbar-thumb:hover {
+    min-width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: fade(@text_color,060%);
+    border: 1px solid @base_color;
+    border-radius: 3px;
+    transition: all 200ms ease-in-out;
+}
+
+
+scrollbar.overlay-indicator slider:hover {
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar{// trough {
+    padding: 0px;
+    width:5px;
+    height:5px;
+}
+::-webkit-scrollbar-track {
+}
+
+scrollbar.overlay-indicator trough {
+    background-color: transparent;
+}
+
+scrollbar.overlay-indicator:hover trough {
+    background-color: fade(#000,010%);
+}
+
+::-webkit-scrollbar:hover {//trough {
+    background-color: transparent;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar {
+    background-color: @base_color;
+}

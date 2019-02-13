@@ -17,6 +17,56 @@
 }
 
 
+
+.package-card,atom-panel{
+  background-color: @button-background-color !important;
+ text-shadow: 0 1px @text_shadow_color;
+   background-image:
+       linear-gradient(
+           to bottom,
+           transparent,
+           transparent 50%,
+           fade(
+               #000,
+               4%
+           )
+       ) !important;
+   border: 1px solid @border_color;// !important;
+   border-radius: 2.5px;
+   box-shadow:
+       inset 0 0 0 1px fade(@bg_highlight_color,005%),
+       inset 0 1px 0 0 fade(@bg_highlight_color,045%),
+       inset 0 -1px 0 0 fade(@bg_highlight_color,015%),
+       0 1px 0 0 fade(@bg_highlight_color,015%);
+   color: @text_color !important;
+   // transition: all 100ms ease-in;
+}
+.atom-dock-resize-handle.left.atom-dock-resize-handle-resizable{
+  border-right: 0px solid multiply(@titlebar_color,tint(#000,076%));// !important;
+  border-left: 0px solid @ideal_bg_color;// !important;
+  background-color: multiply(@titlebar_color,tint(#000,076%));
+  width:5px;
+  margin-left: 0px;
+  margin-right: -1px;
+  box-shadow: inset 0 0 0 1px fade(@bg_highlight_color,020%),inset 0 0 0 1px  @ideal_bg_color;
+}
+// .atom-dock-resize-handle.left.atom-dock-resize-handle-resizable{
+//   border-right: 1px solid multiply(@titlebar_color,tint(#000,076%));// !important;
+//   border-left: 1px solid @ideal_bg_color;// !important;
+//   background-color: multiply(@titlebar_color,tint(#000,076%));
+//   width:3px;
+//   margin-left: -1px;
+//   box-shadow: inset 0 0 0 1px fade(@bg_highlight_color,020%),inset 0 0 0 1px  @ideal_bg_color;
+// }
+.atom-dock-resize-handle.right.atom-dock-resize-handle-resizable{
+  border-right: 0px solid multiply(@titlebar_color,tint(#000,076%));// !important;
+  border-left: 0px solid @ideal_bg_color;// !important;
+  background-color: multiply(@titlebar_color,tint(#000,076%));
+  width:5px;
+  margin-left: -1px;
+  margin-right: 0px;
+  box-shadow: inset 0 0 0 1px fade(@bg_highlight_color,020%),inset 0 0 0 1px  @ideal_bg_color;
+}
 // Modal -------------------
 // Used on top of the editor, like the Command Palette.
 
@@ -24,4 +74,5 @@ atom-panel.modal {
   border: 1px solid @overlay-border-color;
   border-top: none;
   box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
+
 }
