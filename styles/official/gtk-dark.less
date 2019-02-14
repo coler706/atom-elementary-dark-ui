@@ -18,14 +18,14 @@
 
 @import url("palette.less");
 @import url("brand-dark.less");
-
+@import "syntax-variables";
 /* Default color scheme */
-@base_color: #3d4248;
+@base_color: multiply(@syntax-background-color,tint(#000,123.4567%));// #3d4248;
 @bg_color: multiply(@base_color,tint(#000,096%));
 @bg_highlight_color: multiply(@bg_color,tint(#000,140%));
 @border_color: fade(@BLACK_900,25%);
 @fg_color: @SILVER_300;
-@insensitive_color: mix(@bg_color, @text_color, 0.5);
+@insensitive_color: mix(@bg_color, @text_color, 50%);
 @inset_dark_color: fade(@BLACK_900, 3%);
 @inset_dark_color_backdrop: fade(@BLACK_900, 3%);
 @menu_separator: fade(@BLACK_900, 25%);
@@ -41,9 +41,9 @@
 @tooltip_bg_color: @BLACK_900;
 @tooltip_fg_color: white;
 @decoration_border_color: fade(#000, 75%);
-@internal_element_color: mix(@text_color, @base_color, 0.4);
-@internal_element_prelight: mix(@text_color, @base_color, 0.4);
-@internal_element_insensitive: mix(@internal_element_color, @base_color, 0.7);
+@internal_element_color: mix(@text_color, @base_color, 40%);
+@internal_element_prelight: mix(@text_color, @base_color, 40%);
+@internal_element_insensitive: mix(@internal_element_color, @base_color, 70%);
 @view_symbolic_color: multiply(@internal_element_color,tint(#000,080%));
 @ideal_bg_color:multiply(
                 @titlebar_color,

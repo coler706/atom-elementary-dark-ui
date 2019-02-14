@@ -18,19 +18,16 @@
 
 @import url("palette.less");
 @import url("brand.less");
-.mutlw(@x, @y) {
-    @result: ((@x + @y) / 2);
-  }
-
+@import "syntax-variables";
 /* Default color scheme */
-@base_color: white;
+@base_color: multiply(@syntax-background-color,tint(#000,123.4567%));//@syntax-background-color;
 @bg_color: multiply(@base_color,tint(#000,096%));
 @bg_highlight_color: white;
 @border_color: fade(@BLACK_900, 25%);
 @fg_color: @BLACK_500;
-@insensitive_color: mix(@text_color, @bg_color, 0.5);
+@insensitive_color: mix(@text_color, @bg_color, 50%);
 @inset_dark_color: fade(@BLACK_900, 6%);
-@inset_dark_color_backdrop: alpha(@BLACK_900, 0.03);
+@inset_dark_color_backdrop: fade(@BLACK_900, 3%);
 @menu_separator:fade(@BLACK_900, 15%);
 @menu_separator_shadow: fade(white, 80%);
 @placeholder_text_color: multiply(@text_color,tint(#000,250%));
@@ -38,14 +35,14 @@
 @selected_fg_color: white;
 @text_color: @BLACK_500;
 @text_shadow_color: fade(white, 40%);
-@titlebar_color: mix(@SILVER_300, @SILVER_100, 0.25);
+@titlebar_color: multiply(@base_color,tint(#000,090%));//mix(@SILVER_300, @SILVER_100, 25%);
 @title_color: multiply(@titlebar_color,tint(#000,055%));
 @title_shadow_color: fade(white, 60%);
 @tooltip_bg_color: @BLACK_900;
 @tooltip_fg_color: white;
 @decoration_border_color: fade(#000, 30%);
-@internal_element_color: mix(@text_color, @base_color, 0.4);
-@internal_element_prelight: mix(@text_color, @base_color, 0.2);
+@internal_element_color: mix(@text_color, @base_color, 40%);
+@internal_element_prelight: mix(@text_color, @base_color, 20%);
 @ideal_bg_color:multiply(
                 @titlebar_color,
                 tint(#000,90%)

@@ -356,3 +356,26 @@ input[type="color"]::-webkit-color-swatch {
         inset 0 -1px 0 0 fade(#fff,015%),
         0 1px 0 0 fade(#fff,015%);
 }
+.form-control{
+  min-height: 27px;
+   background-color: @button-background-color;
+  text-shadow: 0 1px @text_shadow_color;
+    background-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            transparent 50%,
+            fade(
+                #000,
+                4%
+            )
+        );
+    border: 1px solid @border_color;// !important;
+    border-radius: 2.5px;
+    box-shadow:
+        inset 0 0 0 1px fade(@bg_highlight_color,005%),
+        inset 0 1px 0 0 fade(@bg_highlight_color,045%),
+        inset 0 -1px 0 0 fade(@bg_highlight_color,015%),
+        0 1px 0 0 fade(@bg_highlight_color,015%);
+    color: @text_color;
+}

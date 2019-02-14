@@ -11,7 +11,32 @@
     padding: .75em;
     white-space: nowrap;
     max-width: none;
+    background-color: fade(#222, 90%);
+    border-radius: 3px;
+    border-width: 0;
+    box-shadow:
+        0 1px 3px fade(#000, 12%),
+        0 1px 2px fade(#000,24%);
+    color: #fff;
+    // padding: 3px 6px;
+    // margin: 6px;
+    text-shadow: 0 1px 2px fade(#000, 60%);
   }
+
+    &.top .tooltip-arrow{
+      border-top-color: fade(#222, 90%) !important;
+    }
+    &.bottom .tooltip-arrow{
+      border-bottom-color: fade(#222, 90%) !important;
+    }
+    &.left .tooltip-arrow{
+      border-left-color: fade(#222, 90%) !important;
+    }
+    &.right .tooltip-arrow{
+      border-right-color: fade(#222, 90%) !important;
+    }
+
+
 
   .keystroke {
     padding: .15em .4em;
