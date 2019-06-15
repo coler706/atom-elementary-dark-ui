@@ -17,44 +17,41 @@
 */
 
 @import url("palette.less");
-@import url("brand-dark.less");
+@import url("brand.less");
 // @import "syntax-variables";
 /* Default color scheme */
-@base_color: multiply(@syntax-background-color,tint(#000,123.4567%));// #3d4248;
+@base_color: multiply(@syntax-background-color,tint(#000,123.4567%));//@syntax-background-color;
 @bg_color: multiply(@base_color,tint(#000,096%));
-@bg_highlight_color: contrast(contrast(@bg_color,multiply(@bg_color,tint(#000,140%)),white),multiply(@bg_color,tint(#000,140%)),white);//white in light
-@border_color: fade(@BLACK_900,25%);
-@fg_color: contrast(@bg_color,@SILVER_300,@BLACK_500);
-@insensitive_color: mix(@bg_color, @text_color, 50%);
-@inset_dark_color: fade(@BLACK_900, 3%);//fade(@BLACK_900, 6%); in light
+@bg_highlight_color: white;
+@border_color: fade(@BLACK_900, 25%);
+@fg_color: @BLACK_500;
+@insensitive_color: mix(@text_color, @bg_color, 50%);
+@inset_dark_color: fade(@BLACK_900, 6%);
 @inset_dark_color_backdrop: fade(@BLACK_900, 3%);
-@menu_separator: fade(@BLACK_900, 25%);
-@menu_separator_shadow: fade(white, 5%);
-@placeholder_text_color: multiply(@text_color,tint(#000,080%));
+@menu_separator:fade(@BLACK_900, 15%);
+@menu_separator_shadow: fade(white, 80%);
+@placeholder_text_color: multiply(@text_color,tint(#000,250%));
 @selected_bg_color: multiply(@BLUEBERRY_300,tint(#000,085%));
 @selected_fg_color: white;
-@text_color: contrast(@bg_color,@SILVER_100,@BLACK_500);//@SILVER_100;
-@text_shadow_color: contrast(@text_color,fade(white, 40%),fade(@BLACK_900, 40%));
-@titlebar_color: multiply(@base_color,tint(#000,090%));
-@title_color: multiply(@text_color,tint(#000,090%));
-@title_shadow_color: contrast(@text_color,fade(@BLACK_900, 60%),fade(white, 60%));
+@text_color: @BLACK_500;
+@text_shadow_color: fade(white, 40%);
+@titlebar_color: multiply(@base_color,tint(#000,090%));//mix(@SILVER_300, @SILVER_100, 25%);
+@title_color: multiply(@titlebar_color,tint(#000,055%));
+@title_shadow_color: fade(white, 60%);
 @tooltip_bg_color: @BLACK_900;
 @tooltip_fg_color: white;
-@decoration_border_color: contrast(@bg_color,fade(#000, 30%),fade(#000, 75%));
+@decoration_border_color: fade(#000, 30%);
 @internal_element_color: mix(@text_color, @base_color, 40%);
-@internal_element_prelight: contrast(black,mix(@text_color, @base_color, 40%),mix(@text_color, @base_color, 20%));//ligth :mix(@text_color, @base_color, 20%)
-@internal_element_insensitive: mix(@internal_element_color, @base_color, 70%);
-@view_symbolic_color: multiply(@internal_element_color,tint(#000,080%));
+@internal_element_prelight: mix(@text_color, @base_color, 20%);
 @ideal_bg_color:multiply(
                 @titlebar_color,
                 tint(#000,90%)
             );
-
 /* Colormap actually used by the theme, to be overridden in other css files */
 @theme_bg_color: @bg_color;
 @attention_color: @BLUEBERRY_500;
 @link_color: @BLUEBERRY_500;
-@warning_color: contrast(@text_color,@BANANA_700,@BANANA_500);
+@warning_color: @BANANA_500;
 @error_color: @STRAWBERRY_500;
 @success_color: @LIME_500;
 @insensitive_fg_color: @SILVER_500;
