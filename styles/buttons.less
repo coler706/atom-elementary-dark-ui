@@ -33,13 +33,23 @@
   }
 
   &:active {
-    color: fade(@text-color-selected, 66%);
-    background-color: darken(@button-background-color, 2%);
+    color: @text-color-selected;
+    background-color: @button-background-color-selected;
+    background-image:transparent;
+
+    box-shadow:
+        inset 0 0 1px 0px fade(@inset_dark_color,020%),
+        0 1px 0 0 fade(@bg_highlight_color,015%);
   }
 
   &.selected {
     color: @text-color-selected;
     background-color: @button-background-color-selected;
+    background-image:transparent;
+
+    box-shadow:
+        inset 0 0 1px 0px fade(@inset_dark_color,020%),
+        0 1px 0 0 fade(@bg_highlight_color,015%);
   }
 
   &:focus,
